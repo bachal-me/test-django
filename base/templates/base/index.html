@@ -1,0 +1,788 @@
+{% extends "base/base.html" %} {% block title %} Sparkline Labs {% endblock %}
+{% load static %} {% block body %}
+
+<!-- ====== 1.2. hero section ====== -->
+<section class="hero">
+  <div class="container aos-init aos-animate" data-aos="zoom-in">
+    <div>
+      <div class="hero-social-icon flex">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <hr class="d-mblock d-sm-none d-none" />
+      </div>
+      <div class="center-data">
+        <h1>Sparkline Labs</h1>
+        <h3>BUILDING YOUR EMPIRE DIGITALLY</h3>
+        <div class="center-btn flex">
+          <a href="{% url 'contact' %}" class="btn_hover1">Get Started</a>
+          <a href="{% url 'portfolio' %}" class="btn_hover2">Discover More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ====== End of 1.2. hero section ====== -->
+<!-- ====== 1.3. card section ====== -->
+<section class="feature">
+  <div class="container">
+    <div class="flex">
+      <div class="header-card aos-init aos-animate" data-aos="fade-up">
+        <div>
+          <figure>
+            <img
+              src="{% static 'base/Images/icon/feature1.png' %}"
+              class="feature-img1"
+              alt="feature"
+            />
+          </figure>
+          <h4>CUSTOMIZED SOLUTIONS</h4>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever.
+          </p>
+        </div>
+      </div>
+      <div class="header-card aos-init aos-animate" data-aos="fade-down">
+        <div>
+          <figure>
+            <img
+              src="{% static 'base/Images/icon/feature2.png' %}"
+              alt="feature"
+            />
+          </figure>
+          <h4>ROI-DRIVEN APPROACH</h4>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever.
+          </p>
+        </div>
+      </div>
+      <div class="header-card aos-init aos-animate" data-aos="fade-up">
+        <div>
+          <figure>
+            <img
+              src="{% static 'base/Images/icon/feature3.png' %}"
+              alt="feature"
+            />
+          </figure>
+          <h4>CREATIVE SOLUTION</h4>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever.
+          </p>
+        </div>
+      </div>
+      <div class="header-card aos-init aos-animate" data-aos="fade-down">
+        <div>
+          <figure>
+            <img
+              src="{% static 'base/Images/icon/feature4.png' %}"
+              alt="feature"
+            />
+          </figure>
+          <h4>EXPERT TEAM</h4>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ====== End of 1.3. card section ====== -->
+<!-- ====== 1.4. logoipsum section ====== -->
+<section class="logoipsum">
+  <div class="container">
+    <div class="flex items-center flex-col gap-5">
+      <hr class="hr1" />
+      <h3 data-aos="zoom-in" class="mb-6 aos-init aos-animate">OUR CLIENTS</h3>
+    </div>
+    <div
+      class="logoipsum-slider slick-initialized aos-init aos-animate"
+      data-aos="zoom-in"
+    >
+      <div class="logos-list slick-track">
+        {% for client in clients %}
+        <figure
+          class="logo-item slick-slide slick-current slick-active"
+          data-slick-index="0"
+          aria-hidden="false"
+          style="width: 258px"
+          tabindex="0"
+        >
+          <img src="{{ client.logo.url }}" alt="logoipsum" />
+        </figure>
+        {% endfor %}
+      </div>
+    </div>
+    <hr class="hr2" />
+  </div>
+</section>
+<!-- ====== End of 1.4. logoipsum section ====== -->
+<!-- ====== 1.5. About us section ====== -->
+<section class="about">
+  <div class="container">
+    <div class="container-center about-data flex-sb">
+      <div class="sm:w-1/2 aos-init aos-animate" data-aos="fade-up">
+        <!-- <div class="flex items-center about-title">
+                    <hr class="about-hr">
+                    <h2>About</h2>
+                </div> -->
+        <h2>Explore Our Services And Boost Your Online Presence</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged.
+        </p>
+        
+        <div class="flex items-center gap-4 my-4">
+          <i class="fa-solid text-[16px] fa-check"></i>
+          <p class="text-[16px] text-white">Lorem Ipsum is simply dummy text of the printing.</h7>
+        </div>
+        <div class="flex items-center gap-4 my-4">
+          <i class="fa-solid fa-check"></i>
+          <p class="text-[16px] text-white">Lorem Ipsum is simply dummy text of the printing.</h7>
+        </div>
+        <div class="flex items-center about-btns gap-5 mt-8">
+          <a href="{% url 'contact' %}" class="btn_hover1">Get Started</a>
+          <a href="{% url 'portfolio' %}" class="btn_hover2">Discover More</a>
+        </div>
+      </div>
+      <div
+        class="about-imgs flex items-center Justify-center sm:w-1/2 aos-init aos-animate"
+        data-aos="fade-down"
+      >
+        <div>
+          <figure>
+            <img src="{% static 'base/Images/home/about.png' %}" alt="img" />
+          </figure>
+        </div>
+        <div class="ab-count flex items-center Justify-center ">
+          <div class="flex items-center Justify-center">
+            <h2>3</h2>
+            <h2>+</h2>
+          </div>
+          <p>years of experience</p>
+        </div>
+        <div class="about-hr flex items-center gap-4">
+          <hr />
+          <!-- <h6>Who we are</h6> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ====== End of 1.5. About us section ====== -->
+<!-- ====== 1.7. Services section ====== -->
+<section class="service">
+  <div class="service-1">
+    <div class="container">
+      <div
+        class="container-center service-data aos-init aos-animate"
+        data-aos="fade-down"
+      >
+        <div class="page-title text-center sm:text-left sm:w-[66.66%]">
+          <!-- <div class="flex items-center gap-4">
+                                <hr class="service-hr1 ">
+                                <h5>SERVICES</h5>
+                            </div> -->
+          <h2 class="mt-6">Services We Offer</h2>
+          <p class="mt-6">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever.
+          </p>
+        </div>
+        <!-- <div class="w-[33.333%] mt-6 flex items-center flex-end">
+                            <a href="services.html" class="btn_hover2">View All Services</a>
+                        </div> -->
+        <hr class="mt-6 mb-6" />
+      </div>
+      <div class="flex items-center gap-4 mt-6 s-card">
+        {% for service in services %}
+        <div class="service-card aos-init aos-animate" data-aos="fade-up">
+          <figure>
+            <img
+              src="{% static 'base/Images/icon/slider2.png' %}"
+              alt="slider2"
+            />
+          </figure>
+          <h3>{{service.title}}</h3>
+          <p>{{service.headline}}</p>
+          <a href="{% url 'services' service.slug_url %}"
+            >Read more <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ====== End of 1.6. Services section ====== -->
+<!-- 1.7 Testimonials Section -->
+<section class="testimonials">
+  <div class="container">
+    <div class="flex items-center flex-col gap-5">
+      <hr class="hr1" />
+      <h3 data-aos="zoom-in" class="mb-6 aos-init aos-animate color4">
+        Testimonials
+      </h3>
+    </div>
+    <div class="slider-container">
+      <div
+        class="testimonials-slider"
+        data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'
+      >
+        {% for testimonial in testimonials %}
+        <div class="testimonial">
+          <div class="testi-row">
+            <div class="client-info">
+              <img src="{{ testimonial.client.image.url }}" alt="" />
+              <h5><b>{{testimonial.client.name}}</b></h5>
+              <small
+                >{{testimonial.client.position}}
+                {{testimonial.client.company}}</small
+              >
+            </div>
+            <div class="client-message">
+              <img
+                src="{% static 'base/Images/icon/quotation-mark-gray.svg' %}"
+                alt=""
+              />
+              <p>{{testimonial.message}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <hr class="hr2" />
+  </div>
+</section>
+<!-- End of 1.6 Testimonials Section -->
+<section class="portfolio">
+  <div class="portfolio-1">
+    <div class="container">
+      <div
+        class="container-center portfo-center aos-init aos-animate"
+        data-aos="fade-up"
+      >
+        <div class="page-title w-1/2">
+          <div class="flex items-center gap-4">
+            <hr class="gallary-hr1" />
+            <h5>PORTFOLIO</h5>
+          </div>
+          <!-- <h2 class="mt-6">Our Latest Projects.</h2> -->
+          <p>Our Latest Projects.</p>
+        </div>
+        <div class="flex items-center mt-4 sm:mt-0 sm:flex-end sm:w-100">
+          <a href="{% url 'portfolio' %}" class="btn_hover2"
+            >View All Projects</a
+          >
+        </div>
+      </div>
+      <hr class="mt-8" />
+    </div>
+  </div>
+  <div class="gallary">
+    <div class="ga-bg"></div>
+    <!-- overly -->
+    <span> </span>
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+      <div id="all" class="tabcontent" style="display: block">
+        <div class="flex items-center Justify-center">
+          <div class="case-studies-main flex-wrap items-center justify-between">
+            {% for project in projects %}
+            <div class="case-study">
+              <a href="{% url 'case-study' project.slug_url %}">
+                <img class="project-image" src="{{project.image.url}}" alt="" />
+              </a>
+              <a href="{% url 'case-study' project.slug_url %}">
+                <h3 class="case-title mt-6">{{project.title}}</h3>
+              </a>
+              <p>{{project.about_client}}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="gallary-hr flex items-center gap-4 flex-end mt-6">
+        <h6>Creative Solution</h6>
+        <hr />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Team Section-->
+<section class="inter-family dark:bg-[#150725]">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-46">
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+      >
+        Our Team
+      </h2>
+      <p
+        class="font-light text-gray-500 lg:mb-46 sm:text-xl dark:text-gray-400"
+      >
+        Explore the whole collection of open-source web components and elements
+        built with the utility classes from Tailwind
+      </p>
+    </div>
+    <div class="grid gap-8 mb-6 lg:mb-46 md:grid-cols-2">
+      <div
+        class="bg-gray-50 rounded-lg shadow sm:flex items-center dark:bg-gray-800 dark:border-gray-700"
+      >
+        <a href="#">
+          <img
+            class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+            alt="Bonnie Avatar"
+          />
+        </a>
+        <div class="p-5">
+          <h3
+            class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+          >
+            <a href="#">Bonnie Green</a>
+          </h3>
+          <span class="text-gray-500 dark:text-gray-400"
+            >CEO & Web Developer</span
+          >
+          <p class="mt-4 mb-4 font-light text-gray-500 dark:text-gray-400">
+            Bonnie drives the technical strategy of the flowbite platform and
+            brand.
+          </p>
+          <ul class="flex items-center space-x-4 sm:mt-0">
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="bg-gray-50 rounded-lg shadow sm:flex items-center dark:bg-gray-800 dark:border-gray-700"
+      >
+        <a href="#">
+          <img
+            class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+            alt="Jese Avatar"
+          />
+        </a>
+        <div class="p-5">
+          <h3
+            class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+          >
+            <a href="#">Jese Leos</a>
+          </h3>
+          <span class="text-gray-500 dark:text-gray-400">CTO</span>
+          <p class="mt-4 mb-4 font-light text-gray-500 dark:text-gray-400">
+            Jese drives the technical strategy of the flowbite platform and
+            brand.
+          </p>
+          <ul class="flex items-center space-x-4 sm:mt-0">
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="bg-gray-50 rounded-lg shadow sm:flex items-center dark:bg-gray-800 dark:border-gray-700"
+      >
+        <a href="#">
+          <img
+            class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+            alt="Michael Avatar"
+          />
+        </a>
+        <div class="p-5">
+          <h3
+            class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+          >
+            <a href="#">Michael Gough</a>
+          </h3>
+          <span class="text-gray-500 dark:text-gray-400"
+            >Senior Front-end Developer</span
+          >
+          <p class="mt-4 mb-4 font-light text-gray-500 dark:text-gray-400">
+            Michael drives the technical strategy of the flowbite platform and
+            brand.
+          </p>
+          <ul class="flex items-center space-x-4 sm:mt-0">
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="bg-gray-50 rounded-lg shadow sm:flex items-center dark:bg-gray-800 dark:border-gray-700"
+      >
+        <a href="#">
+          <img
+            class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png"
+            alt="Sofia Avatar"
+          />
+        </a>
+        <div class="p-5">
+          <h3
+            class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+          >
+            <a href="#">Lana Byrd</a>
+          </h3>
+          <span class="text-gray-500 dark:text-gray-400">Marketing & Sale</span>
+          <p class="mt-4 mb-4 font-light text-gray-500 dark:text-gray-400">
+            Lana drives the technical strategy of the flowbite platform and
+            brand.
+          </p>
+          <ul class="flex items-center space-x-4 sm:mt-0">
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ====== 1.10. FAQ section ====== -->
+<section class="faq relative">
+  <span> </span>
+  <div class="container">
+    <div class="flex flex-col sm:flex-row sm:items-center flex-wrap">
+      <div class="sm:w-1/2 text-center aos-init aos-animate" data-aos="fade-up">
+        <div class="flex items-center gap-5">
+          <hr class="faq-hr1" />
+          <h5>FAQ</h5>
+        </div>
+        <h2 class="mt-4">Frequently Asked Questions</h2>
+        <p class="mt-4">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever.
+        </p>
+      </div>
+      <div class="sm:w-1/2 mt-6">
+        <div
+          class="accordion flex items-center flex-col gap-5 aos-init aos-animate"
+          id="accordionExample"
+          data-aos="fade-down"
+        >
+          {% for faq in faqs %}
+          <div class="accordion-item bg-white">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button">
+                {{faq.question}}
+                <img src="{% static 'base/Images/icon/plus.png' %}" alt="img" />
+              </button>
+            </h2>
+            <div class="accordion-collapse">
+              <p>{{faq.answer}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ====== End of 1.11. FAQ section ====== -->
+
+{% endblock body %}

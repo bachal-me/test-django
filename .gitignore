@@ -1,0 +1,6 @@
+media
+__pycache__
+migrations
+.env
+db.sqlite3
+myenv

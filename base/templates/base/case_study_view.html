@@ -1,0 +1,74 @@
+{% extends "base/base.html" %}
+{% block title %} {{project.title}} - Case Study {% endblock %}
+{% load static %}
+{% block body %}
+<section class="service-page">
+    <div class="container">
+        <div class="container-canter service-center aos-init aos-animate" data-aos="fade-up">
+            <div class="page-title">
+                <div class="flex items-center gap-1">
+                    <hr class="gallary-hr1">
+                    <h2>{{project.title}}</h2>
+                </div>
+                <!-- About the customer -->
+                <p>{{project.about_client}}</p>
+            </div>
+            <div class="flex items-center mt-4 sm:mt-0 sm:flex-end sm:w-100">
+                {% comment %} <a href="portfolio.html" class="btn_hover2">View All Projects</a> {% endcomment %}
+            </div>
+        </div>
+        <hr class="mt-[4.5rem]">
+        <div class="case-study-view mt-8">
+            <div class="case-study-left">
+                <div class="description mb-4">
+                    <h3>Description</h3>
+                    <p>
+                        {% for desc in project.description %}
+                            <p>{{desc}}</p>
+                        {% endfor %}
+                    </p>
+                </div>
+                <div class="problem mb-4">
+                    <h3>Problem</h3>
+                    {% for problem in project.problem %}
+                        <p>{{problem}}</p>
+                    {% endfor %}
+                </div>
+                <div class="solution mb-4">
+                    <h3>Solution</h3>
+                    {% for solution in project.solution %}
+                        <p>{{solution}}</p>
+                    {% endfor %}    
+                </div>
+                <div class="preview mb-4">
+                    <img src="{{project.image.url}}" alt="" style="width: 100%;">
+                </div>
+                <div class="challenges mb-4">
+                    <h3>Challenges</h3>
+                    {% for challenges in project.challenges %}
+                        <p>{{challenges}}</p>
+                    {% endfor %} 
+                </div>
+            </div>
+            <div class="case-study-right">
+                <div class="services-provided mb-4">
+                    <h3>Services Provided</h3>
+                    <ul>
+                        {% for service in project.services.all %}
+                            <li>{{service}}</li>
+                        {% endfor %} 
+                    </ul>
+                </div>
+                <div class="technologies-used mb-4">
+                    <h3>Technologies</h3>
+                    <ul class="flex-col">
+                        {% for technologies in project.technologies %}
+                            <li>{{technologies}}</li>
+                        {% endfor %} 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

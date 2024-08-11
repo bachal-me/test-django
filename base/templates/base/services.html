@@ -1,0 +1,119 @@
+{% extends "base/base.html" %}
+{% block title %} Sparkline Labs {% endblock %}
+{% load static %}
+{% block body %}
+<section class="service-page">
+    <div class="container">
+        <div class="container-center service-center aos-init aos-animate" data-aos="fade-up">
+            <div class="page-title mt-4">
+                <div class="flex items-center gap-1">
+                    <hr class="gallary-hr1">
+                    <h3>{{ service.title }}</h3>
+                </div>
+                <!-- <h2 class="mt-[4.5rem]"></h2> -->
+                <p>{{ service.headline }}</p>
+            </div>
+            <div class="flex items-center mt-4 sm:mt-0 sm:flex-end sm:w-100">
+                {% comment %} <a href="{% url 'portfolio' %}" class="btn_hover2">View All Projects</a> {% endcomment %}
+            </div>
+        </div>
+        <hr class="mt-8">
+        <div class="service-body">
+            <div class="service-desciption">
+                <h3 class="service-dec-heading">Service Description</h3>
+                    {% for item in service.description %}
+                        <p class="mt-4">{{item}}</p>
+                    {% endfor %}
+            </div>
+            <div class="service-keys flex flex-col sm:flex-row">
+                <img src="{{ service.image.url }}" alt="">
+                {% comment %} <ul class="keys-list"> {% endcomment %}
+                    <ul class="keys-list">
+                        {% for item in service.key_features %}
+                            <li>{{item}}</li>
+                        {% endfor %}
+                    </ul>
+                {% comment %} </ul> {% endcomment %}
+            </div>
+            <div class="service-features">
+                <h3>Features</h3>
+                <ul>
+                    {% for item in service.features %}
+                        <li class="mt-4">{{item}}</li>
+                    {% endfor %}                 
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== 1.9. How we work section ====== -->
+<section class="work">
+    <div class="container position-relative">
+        <div class="work-para text-center aos-init aos-animate" data-aos="fade-up">
+            <h5>HOW WE WORK</h5>
+            <h2 class="h2_margin">Our Process For Delivering Results</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                been
+                the industry's standard dummy text ever.
+            </p>
+        </div>
+        <div class="work-hr flex items-center gap-1">
+            <hr>
+            <h6>Project in steps</h6>
+        </div>
+        <div class="work-line flex items-center flex-center gap-1 flex-wrap relative">
+            <div class="aos-init aos-animate" data-aos="zoom-in">
+                <h2>01.</h2>
+                <h4>Make An Appointment</h4>
+            </div>
+            <div class="aos-init aos-animate" data-aos="zoom-in">
+                <h2>02.</h2>
+                <h4>Meet Our Team</h4>
+            </div>
+            <div class="aos-init aos-animate" data-aos="zoom-in">
+                <h2>03.</h2>
+                <h4>Get Consultation</h4>
+            </div>
+            <div class="aos-init aos-animate" data-aos="zoom-in">
+                <h2>04.</h2>
+                <h4>Start Project</h4>
+            </div>
+        </div>
+        <div class="flex items-center flex-center" data-aos="zoom-in">
+            <a href="{% url "contact" %}" class="btn_hover2">Contact Now</a>
+        </div>
+    </div>
+</section>
+<!-- ====== End of 1.9. How we work section ====== -->
+
+<section class="case-studies-page">
+    <div class="container">
+        <div class="work-para text-center aos-init aos-animate" data-aos="fade-up">
+            <h5>WHAT WE DID</h5>
+            <h2 class="h2_margin">Success Stories Of Our Few Clients</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                been
+                the industry's standard dummy text ever.
+            </p>
+        </div>
+        <div class="work-hr flex items-center gap-1">
+            <hr>
+            <h6>Project in action</h6>
+        </div>
+        <div class="case-studies-main flex flex-wrap flex-sb">
+            {% for project in projects %}
+            <div class="case-study">
+                <a href="{% url "case-study" project.slug_url %}">
+                    <img class="project-image" src="{{project.image.url}}" alt="">
+                </a>
+                <a href="{{project.slug_url}}"><h2 class="case-title">{{project.title}}</h2></a>
+                {% for desc in project.description %}
+                    {{desc}}
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock body %}

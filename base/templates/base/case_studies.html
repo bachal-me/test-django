@@ -1,0 +1,40 @@
+{% extends "base/base.html" %}
+{% block title %} Case Studies {% endblock %}
+{% load static %}
+{% block body %}
+    <section class="case-studies-page">
+        <div class="container">
+            <div class="container-center case-studies-center aos-init aos-animate" data-aos="fade-up">
+                <div class="page-title">
+                    <div class="flex items-center gap-1">
+                        <hr class="gallary-hr1">
+                        <h5>Projects</h5>
+                    </div>
+                    <!-- <h2 class="mt-[4.5rem]">Our success stories</h2> -->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga provident quidem ducimus quasi aperiam. Quos facilis amet quod accusantium.</p>
+                </div>
+                <div class="flex items-center mt-4 sm:mt-0 sm:flex-end sm:w-100">
+                    {% comment %} <a href="portfolio.html" class="btn_hover2">View All Projects</a> {% endcomment %}
+                </div>
+            </div>
+            <hr class="mt-8">
+            <h2 class="text-center mt-[4.5rem] color1">Success stories of our clients</h2>
+            <div class="flex case-studies-main flex-wrap flex-sb">
+                {% for project in projects %}
+                <div class="case-study">
+                    <a href="{% url "case-study" project.slug_url %}">
+                        <img class="project-image" src="{{project.image.url}}" alt="">
+                    </a>
+                    <a href="{{project.slug_url}}">
+                        <h3 class="case-title mt-6">{{project.title}}</h3>
+                    </a>
+                    {% for desc in project.description %}
+                        {{desc}}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock body %}
+

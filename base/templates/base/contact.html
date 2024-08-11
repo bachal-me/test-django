@@ -1,0 +1,52 @@
+{% extends "base/base.html" %} {% block title %} Contact Us {% endblock %} {%
+load static %} {% block body %}
+<section class="contact-page">
+  <div class="container">
+    <div class="flex items-center flex-col gap-5">
+      <h2 class="color4">Let's discuss your project</h2>
+      <p class="contact-p">
+        We are committed to understanding your requirements and crafting a
+        tailored solution that aligns with your goals.
+      </p>
+    </div>
+
+    <div class="form-container">
+      <form action="" method="post">
+        {% csrf_token %}
+        <input name="id" hidden />
+        <div class="label-input">
+          <label for="firstname">First Name</label>
+          <input name="firstname" type="text" />
+        </div>
+        <div class="label-input">
+          <label for="lastname">Last Name</label>
+          <input name="lastname" type="text" />
+        </div>
+        <div class="label-input">
+          <label for="email">Email</label>
+          <input name="email" type="email" />
+        </div>
+        <div class="label-input">
+          <label for="text">Phone Number</label>
+          <input name="phone" type="text" />
+        </div>
+        <div class="label-input">
+          <label for="company">Company Name</label>
+          <input name="company" type="text" />
+        </div>
+        <div class="label-input">
+          <label for="region">Region</label>
+          <input name="region" type="text" />
+        </div>
+
+        <div class="label-input">
+          <label for="region">Message</label>
+          <textarea name="message" draggable="false" name="" id=""></textarea>
+        </div>
+
+        <button class="btn_hover1" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock body %}

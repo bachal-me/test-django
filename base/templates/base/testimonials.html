@@ -1,0 +1,53 @@
+{% extends "base/base.html" %} {% block title %} Testimonials {% endblock%} {% load static %} {% block body %}
+
+<section class="testimonials" style="padding-top: 50px">
+  <div class="container">
+    <div
+      class="container-canter testimonials-center aos-init aos-animate"
+      data-aos="fade-up"
+    >
+      <div class="page-title">
+        <div class="flex items-center gap-1">
+          <hr class="gallary-hr1" />
+          <h5>TESTIMONIALS</h5>
+        </div>
+        <!-- <h2 class="mt-[4.5rem]">Clients reviews</h2> -->
+        <p>We've helped our clients complete +3,000 projects</p>
+      </div>
+      <div class="flex items-center mt-4 sm:mt-0 sm:flex-end sm:w-100">
+        {% comment %}
+        <a href="{% url 'portfolio' %}" class="btn_hover2">View All Projects</a>
+        {% endcomment %}
+      </div>
+      <hr class="hr mt-8" />
+    </div>
+    <h2 class="testi-line color1 mt-[4.5rem]">What clients say</h2>
+    <div class="testi-cont">
+      <div class="testimonials-list">
+        {% for testimonial in testimonials %}
+        <div class="testimonial">
+          <div class="testi-row">
+            <div class="client-info">
+              <img src="{{ testimonial.client.image.url }}" alt="" />
+              <h5><b>{{testimonial.client.name}}</b></h5>
+              <small
+                >{{testimonial.client.position}} |
+                {{testimonial.client.company}}</small
+              >
+            </div>
+            <div class="client-message">
+              <img
+                src="{% static 'base/Images/icon/quotation-mark-gray.svg' %}"
+                alt=""
+              />
+              <p>{{testimonial.message}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock body %}
